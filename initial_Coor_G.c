@@ -80,6 +80,7 @@ void initial_Coor_G(COOR_G a[][17])
 
 //#define test
 #ifdef test
+//@2019.05.15 09:15 by LI :/
 void outputXY(COOR_G array[][17],int rows,int cols)
 {
 	int row,col;

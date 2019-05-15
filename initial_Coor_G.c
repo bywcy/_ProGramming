@@ -78,7 +78,8 @@ void initial_Coor_G(COOR_G a[][17])
 	}
 }
 
-/*//You can use the following code to test the validity of the function above.
+//#define test
+#ifdef test
 void outputXY(COOR_G array[][17],int rows,int cols)
 {
 	int row,col;
@@ -115,5 +116,6 @@ void outputArray(COOR_G array[][17],int rows,int cols)
 	outputXY(CG,16,16);
 	outputArray(CG,16,16);
  }
+ #endif
  
  //2019.5.12 11:31 a.m. by Cui Siying 

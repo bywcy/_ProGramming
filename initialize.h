@@ -20,8 +20,9 @@ typedef struct coor_G_index//information of the indexes of the coordinate graph
 }COOR_G;
 
 extern COOR_G CG[][17];
+extern int RG[][145];
 
-void initial_Coor_G();//initial coordinate graph 
+void initial_Coor_G(COOR_G a[][17]);//initial coordinate graph 
 void initial_Rel_G();//initial relational graph 
 void initial_Tree();//initial tree
 void initial_Ord_Q();//initial order queue
@@ -35,3 +36,4 @@ void connect_Rel();//connect relaitionship between res / cli and road
 
 #endif 
 
+//2019.5.15 16:07 by Cui Siying

@@ -30,10 +30,9 @@ typedef struct outputList outputlist;
 typedef outputlist *outputlistptr;
 
 orderlistptr input_File();//input by file 
-void input_Ter();//input by terminal
+orderlistptr input_Ter();//input by terminal
 void output_File();//output to file 
 void output_Ter();//output to terminal 
 
 #endif
-
 

@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "input_output.h"
 
-orderlistptr input_File()//storage data by with linked lists 
+orderlistptr input_File()//storage data with linked lists 
 {
 	int number=0,x_r=0,y_r=0,x_c=0,y_c=0,dist1=0,t0_0=0; 
 	struct orderList *headptr=NULL,*currentptr=NULL,*lastptr=NULL,*temp;
@@ -11,9 +11,8 @@ orderlistptr input_File()//storage data by with linked lists
 	if((fptr=fopen("sales.txt","r"))!=NULL)
 	{
 		freopen("sales.txt","r",stdin);
-		while(!feof(fptr))//create the list
+		while(scanf("%d%d%d%d%d%d",&number,&t0_0,&x_r,&y_r,&x_c,&y_c)!=EOF)//create the list 
 		{
-			scanf("%d %d %d %d %d %d",&number,&t0_0,&x_r,&y_r,&x_c,&y_c);
 			currentptr=malloc(sizeof(struct orderList));
 			if(currentptr!=NULL)
 			{
@@ -51,7 +50,21 @@ orderlistptr input_File()//storage data by with linked lists
 	return headptr;
 }
 
+/*
+int main()
+{
+	orderlistptr currentptr;
+	currentptr=malloc(sizeof(struct orderList));
+	currentptr=input_File();
+	while(currentptr!=NULL)
+	{
+		printf("Order_number£º%d\n",currentptr->num_order);
+		currentptr=currentptr->nextOrder;
+	}
+	return 0;
+}//for the test
+*/
 //2019.5.4   17:00p.m. Wu Chuanyv 
 //2019.5.12  14:00p.m. Wu Chuanyv
-
-
+//2019.5.14  19:56p.m. Wu Chuanyv change the freopen() to fopen()
+//2019.5.14  21:24p.m. Wu Chuanyv 

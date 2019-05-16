@@ -14,16 +14,28 @@ typedef struct coor_G_index_around//store arounding indexes of every index in th
 typedef struct coor_G_index//information of the indexes of the coordinate graph
 {
 	int index;//the number of the restaurant or the client if tag = 1 or 2
-	int tag;//mark the index to judge whether it's road(0)/cli(1)/res(2)
+	int tag;//mark the index to judge whether it's road(0)/cli(2)/res(1)
 	int x,y;//coordinates
 	AROUND arou[5];//1:up.2:down.3:left.4:right
 }COOR_G;
 
+typedef struct index_road_XY
+{
+	int x,y;//the coordinates of the road index
+}ind_xy;
+
 extern COOR_G CG[][17];
 extern int RG[][145];
+extern ind_xy roadIndex[145];
+extern ind_xy cliIndex[80];
+extern ind_xy resIndex[80];
+//@2019.5.6 08:50 by Cui
 
 void initial_Coor_G(COOR_G a[][17]);//initial coordinate graph 
 void initial_Rel_G();//initial relational graph 
+/*Initializing RG[i][j]:If the rider spend only one time travelling from Location I to Location J,then
+RG[i][j]=1.If Location I and Location J are the same place,then RG[i][j]=0;If the rider can't travel from
+Location I to Location J directly during one time,then RG[i][j]=MAX(40)*/
 void initial_Tree();//initial tree
 void initial_Ord_Q();//initial order queue
 

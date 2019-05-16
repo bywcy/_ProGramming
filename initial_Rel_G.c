@@ -42,7 +42,6 @@ void initial_Rel_G()
 			//transform the two indexes into coordinates
 			row1=judgeRow(i);col1=judgeCol(row1,i);
 			row2=judgeRow(j);col2=judgeCol(row2,j);
-			//printf("index1=(%d,%d),index2=(%d,%d) ",col1,row1,col2,row2);//testing code
 			
 			if(row1%2==0)
 			{
@@ -73,8 +72,6 @@ void initial_Rel_G()
 				else 
 				RG[i][j]=MAX;
 			}
-			
-			//printf("RG[%d][%d]=%d\n",i,j,RG[i][j]);//testing code
 		}
 	}
 }
@@ -97,8 +94,14 @@ void outputArray(int array[][145],int rows,int cols)
 
 int main()
 {
+	int i,j;
 	initial_Rel_G();
-	//outputArray(RG,145,145);
+	for(i=1;i<30;i++)
+	{
+		for(j=1;j<30;j++)
+		printf("RG[%d][%d]=%d\n",j,i,RG[j][i]);
+	}
+	outputArray(RG,30,30);//@2019.5.16 09:42 by Cui
 }
 #endif
 

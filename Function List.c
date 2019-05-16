@@ -15,6 +15,9 @@ void initial_Ord_Q()//initial order queue 初始化订单队列
 //initialize inner module
 //these Functions should be only used in the Functions of initial module
 
+//@ add new inner functions 2019.5.15 20:53 by Li
+int judgeRow(int index)
+int judgeCol(int row ,int index)
 void confirm_Id()//confirm which node is road / cli / res 确定点的身份
 int assign_Ind()//assign index to every road_nodes 给道路节点分配index
 void connect_Rel()//connect relaitionship between res / cli and road 联系res/cli与road
@@ -39,11 +42,10 @@ void output_Ter()//output to terminal 输出到终端
 void data()
 
 //simulate module 模拟模块
-
 void floyd()//floyd to find to shortest path between road_nodes floyd找最短路
 void find_Sta_P()//find the start point 找起点
 int SLP_Ro()//get the shortest length of path between road_nodes and restaurant_nodes or client_nodes (I change SPL into SLP)
-			//找道路节点和res/cli节点的SPL
+			//找道路节点和res/cli节点的SLP
 			//下同
 int SLP_Res_Res()//get the shortest length of path between res_nodes and res_nodes
 int SLP_Res_Cli()//get the shortest length of path between res_nodes and cli_nodes

@@ -1,0 +1,60 @@
+//input / output module 
+
+#ifndef INPUT_OUTPUT_H
+#define INPUT_OUTPUT_H
+
+extern int num_of_orders;
+
+struct orderList//information of the order
+{
+    int num_order;//number of the order
+    int x_res,y_res;//restaurant's location
+    int x_cli,y_cli;//client's location
+    int dist;//length of the path between the client and the restaurant
+    int t0;//starting time
+    int t_end;//the ending time of order 
+    struct orderList *nextOrder;
+}; 
+typedef struct orderList orderlist;
+typedef orderlist *orderlistptr;
+
+struct orderList_array
+{
+    int num_order;//number of the order
+    int x_res,y_res;//restaurant's location
+    int x_cli,y_cli;//client's location
+    int dist;//length of the path between the client and the restaurant
+    int t0;//starting time
+    int t_end;//the ending time of order 
+};
+extern struct orderList_array orderlist_array[];
+
+struct outputList//information of the order to output
+{
+    int pro,t;//profit and time
+	int get_order;//quantity of the orders that have been got
+	int over_order;//quantity of the orders that have been over 
+	int overtime_order;//quantity of the orders that have been overtime
+	int riderNum;//quantity of riders
+	struct outputList *next_time; 
+}; 
+typedef struct outputList outputlist;
+typedef outputlist *outputlistptr;
+
+struct output_rid//information of the riders to output
+{
+    int num_rid;//number of riders
+    int x_rid;
+    int y_rid;
+    struct output_rid *nextrider;
+};
+typedef struct output_rid output_rider;
+typedef output_rider *output_riderptr;
+
+orderlistptr input_File();//input by file 
+orderlistptr input_Ter();//input by terminal
+void output_File();//output to file 
+void output_Ter();//output to terminal 
+
+#endif
+
